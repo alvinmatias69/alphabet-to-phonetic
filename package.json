@@ -1,0 +1,31 @@
+{
+  "name": "alphabet-to-phonetic",
+  "version": "1.0.0",
+  "description": "Convert alphabetical text to phonetic form",
+  "main": "dist/index",
+  "typings": "dist/index",
+  "scripts": {
+    "prepublishOnly": "npm run compile",
+    "compile": "npm run clean && tsc",
+    "watch": "tsc -w",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alvinmatias69/alphabet-to-phonetic.git"
+  },
+  "keywords": [
+    "phonetic",
+    "alphabet"
+  ],
+  "author": "Matias Alvin <alvinmatias@protonmail.com> (https://twitter.com/matiasalvin)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvinmatias69/alphabet-to-phonetic/issues"
+  },
+  "homepage": "https://github.com/alvinmatias69/alphabet-to-phonetic#readme",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ]
+}

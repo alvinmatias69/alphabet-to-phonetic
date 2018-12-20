@@ -4,25 +4,36 @@ const phonetic: string[] = [ "alpha", "bravo", "charlie", "delta", "echo", "foxt
                              "lima", "mike", "november", "oscar", "papa",
                              "quebec", "romeo", "sierra", "tango", "uniform",
                              "victor", "whiskey", "x-ray", "yankee", "zulu" ];
+const numberList: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 export function convert(text: string): string {
     const textList = text.toLowerCase().split('');
     return textList.reduce((acc: string, cur: string, index: number): string => {
-        if (!rule.test(cur)) {
-            return acc + cur;
+        let value = cur;
+        if (rule.test(cur)) {
+            const position = cur.charCodeAt(0) - 97;
+            value = phonetic[position]; 
+        } else if (cur === ' ') {
+            value = '(space)';
+        } else if (!isNaN(parseInt(cur))) {
+            value = numberList[parseInt(cur)];
         }
-        const position = cur.charCodeAt(0) - 97;
-        return acc + phonetic[position] + (index < textList.length - 1 ? " " : "");
+        return acc + value + (index < textList.length - 1 ? " " : "");
     }, '');
 }
 
 export function reverse(text: string): string {
     const textList = text.toLowerCase().split(' ');
     return textList.reduce((acc: string, cur: string): string => {
-        if (!phonetic.includes(cur)){
-            return acc + cur + " ";
+        let value = cur;
+        if (phonetic.includes(cur)) {
+            const position = phonetic.indexOf(cur);
+            value = String.fromCharCode(position + 97);
+        } else if (cur === '(space)') {
+            value = ' ';
+        } else if (numberList.includes(cur)) {
+            value = String(numberList.indexOf(cur));
         }
-        const position = phonetic.indexOf(cur);
-        return acc + String.fromCharCode(position + 97);
+        return acc + value;
     }, '');
 }

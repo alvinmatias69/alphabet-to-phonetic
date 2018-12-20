@@ -1,6 +1,6 @@
 {
   "name": "alphabet-to-phonetic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert alphabetical text to phonetic form",
   "main": "dist/index",
   "typings": "dist/index",

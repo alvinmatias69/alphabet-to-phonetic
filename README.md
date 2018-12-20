@@ -6,6 +6,7 @@ First of all, yes, I'm totally aware of how trivial this package is. Also I know
 
 ## What is Phonetic?
 Phonetic alphabet is a widely known alphabet that's used in voice communication. This package use NATO phonetic alphabet on its implementation.
+
 | Letter | Phonetic Letter |
 |:------:|:----------------|
 |a       | alpha           |
